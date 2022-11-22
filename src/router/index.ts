@@ -25,6 +25,11 @@ const routes = [
         path: '/router',
         name: 'Router',
         component: () => { return import('@/views/Router.vue')}
+    },
+    {
+        path: '/counter',
+        name: 'Counter',
+        component: () => { return import('@/views/PiniaCounter.vue')}
     }
 ]
 

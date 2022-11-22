@@ -25,7 +25,7 @@ export const UserInfo = defineStore("user", {
      * 使用已有的 getters
      */
     doubleAgePlus() {
-      return this.doubleAge + 1;
+      return this.doubleAge;
     },
     /**
      * 给 getters 传参数进来
@@ -44,8 +44,33 @@ export const UserInfo = defineStore("user", {
     }
   },
   actions: {
+    /**
+     * 最简单的调用
+     */
     addAge() {
-      return this.age ++
+      // action 可以通过 this 直接使用 state 的值
+      this.age ++
+    },
+    /**
+     * 1.action 支持传参
+     */
+    addAgeNum(num: number) {
+      this.age += num
+    },
+    /**
+     * 2.action 支持异步任务
+     */
+    addAgeAsync(num:number) {
+      setTimeout(() => {
+        this.age += num
+        }, 2000)
+    },
+    /**
+     * 3.action 可以调用别的 store 里的 action
+     */
+    useMainAction() {
+      const main = MainInfo();
+      main.addCount(1)
     }
   }
   // 

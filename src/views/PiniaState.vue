@@ -19,6 +19,7 @@
 
         <h3 style="margin-top: 40px">改变 state.age 的值</h3>
         <h4 @click="userInfo.addAge()">调用 Action 添加 age</h4>
+        <h4 @click="userInfo.useMainAction()">在user中调用 main 的Action - useMainAction</h4>
         <h4 @click="onAddAge">调用 onAddAge 添加 age</h4>
         <h4 @click="onAddAgeTwo">调用 onAddAgeTwo 添加 age</h4>
     </div>

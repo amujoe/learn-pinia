@@ -8,10 +8,10 @@
         <h4>在 user 中使用 main 的 state;  userMainInfo(): {{userMainInfo}}</h4>
 
         <h3 style="margin-top: 40px">main 的值</h3>
-        <h4>结构state的值 count: {{count}}</h4>
+        <h4>结构state的值 count/doubleCount: {{count}} / {{doubleCount}}</h4>
         <h4>直接访问state的值  mainOne.count: {{mainOne.count}}</h4>
         <h4>直接访问state的值  mainOne.name: {{mainOne.name}}</h4>
-        <h4>storeToRefs 的值 mainTwo.count: {{mainTwo.count}}</h4>
+        <h4>storeToRefs 的值 mainTwo.count: {{mainTwo.count}} / {{mainTwo.doubleCount}}</h4>
 
         <h3 style="margin-top: 40px">使用 actions</h3>
         <h4 @click="addCount(10)">addCount(10)</h4>
@@ -30,7 +30,7 @@ import { MainInfo } from "@/store/main"
 const { name, age, userMainInfo} = storeToRefs(UserInfo())
 
 // 三种方式 拿到 main 里的值
-const { count, addCount } = MainInfo();
+const { count, addCount, doubleCount } = MainInfo();
 const mainOne = MainInfo();
 const mainTwo = storeToRefs(MainInfo());
 
